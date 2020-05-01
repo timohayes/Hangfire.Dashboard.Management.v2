@@ -105,7 +105,7 @@
                             $this.button('loading');
 
                             $.post($this.data('url'), send, function (data) {
-                                Hangfire.Management.alertSuccess(id, "A Task has been created. <a href=\"" + data.jobLink + "\">View Job</a>");
+                                Hangfire.Management.alertSuccess(id, "A Task has been created. <a href=\"" + JSON.parse(data).jobLink + "\">View Job</a>");
                             }).fail(function (xhr) {
                                 var error = 'Unknown Error';
 
