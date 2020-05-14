@@ -119,7 +119,7 @@ namespace Hangfire.Dashboard.Management.v2.Pages
 
 								try
 								{
-									manager.AddOrUpdate(jobMetadata.JobId, job, schedule ?? cron, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time"), jobMetadata.Queue);
+									manager.AddOrUpdate(jobMetadata.JobId, job, schedule ?? cron, TimeZoneInfo.Local, jobMetadata.Queue);
 									jobLink = new UrlHelper(context).To("/recurring");
 								}
 								catch (Exception e)
